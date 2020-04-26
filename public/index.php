@@ -2,7 +2,6 @@
 
 use App\Autoloader;
 
-//phpinfo();die;
 require '../app/Autoloader.php';
 Autoloader::register();
 
@@ -92,7 +91,6 @@ if($p === 'ouvrage')
     if($_GET['type'] === 'edit'){
         $data = \App\Table\Ouvrage::getOuvrageByID($_GET['id']);
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-//            var_dump($_POST);die();
             $array = array (id => $_GET['id'], titreOuvrage => $_POST['titreOuvrage'], descriptionOuvrage => $_POST['descriptionOuvrage'],idAuteur => $_POST['idAuteur'],idCategorie => $_POST['idCategorie']);
             \App\Table\Ouvrage::ubpdateOuvrage($array);
             header('Location: ?p=ouvrages');
@@ -116,4 +114,3 @@ if($p === 'ouvrage')
 
 $content = ob_get_clean();
 require '../pages/template/default.php';
-//var_dump($_GET['p']);

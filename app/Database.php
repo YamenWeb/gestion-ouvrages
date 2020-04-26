@@ -22,9 +22,7 @@ class Database
         if($this->DB_Instance === null){
             $this->DB_Instance = new PDO('mysql:dbname='.$this->dbName.';host='.$this->dbHost, $this->dbUser, $this->dbPass);
             $this->DB_Instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//            var_dump('get new instance');
         }
-//        var_dump('get DB Inctance Created');
         return $this->DB_Instance;
     }
 
